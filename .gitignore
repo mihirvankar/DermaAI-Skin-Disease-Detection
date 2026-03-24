@@ -1,0 +1,9 @@
+dataset/
+*.h5
+*.zip
+static/uploads/
+dermai.db
+__pycache__/
+.ipynb_checkpoints/
+*.ipynb
+*.png

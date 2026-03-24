@@ -1,0 +1,1 @@
+{"accuracy": 75.5, "model": "MobileNetV2", "dataset": "HAM10000", "classes": 7, "img_size": 128}

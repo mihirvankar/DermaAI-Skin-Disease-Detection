@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DermAI – History</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f7f5f2;--white:#fff;--ink:#0f0e0c;--ink2:#2e2c28;--muted:#7a7670;--border:#e3e0da;--accent:#1a6b4a;--accent-light:#e8f4ee;--gold:#c9963a;--danger:#c0392b;--warn:#fef9ee}
+body{background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;min-height:100vh}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,245,242,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Lora',serif;font-size:22px;font-weight:600}.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-pill{padding:8px 16px;border-radius:100px;font-size:13px;font-weight:500;text-decoration:none;color:var(--muted);transition:all .2s;border:1px solid transparent}
+.nav-pill:hover{color:var(--ink);background:var(--white);border-color:var(--border)}
+.nav-pill.active{background:var(--ink);color:var(--white)}
+.nav-pill.danger{color:var(--danger)}
+@media(max-width:768px){nav{padding:0 16px}}
+
+.page{max-width:1100px;margin:0 auto;padding:96px 40px 80px}
+@media(max-width:768px){.page{padding:86px 16px 60px}}
+.page-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:16px}
+.page-top h1{font-family:'Lora',serif;font-size:2rem;font-weight:600}
+.page-top p{color:var(--muted);font-size:14px;margin-top:4px}
+.btn-new{background:var(--ink);color:#fff;text-decoration:none;padding:11px 20px;border-radius:12px;font-size:14px;font-weight:700;transition:all .2s}
+.btn-new:hover{background:var(--ink2);transform:translateY(-1px)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.stat-card .num{font-family:'Lora',serif;font-size:28px;font-weight:600}
+.stat-card .lbl{font-size:12px;color:var(--muted);margin-top:3px}
+.stat-card.red .num{color:var(--danger)}
+.stat-card.green .num{color:var(--accent)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.scan-card{background:var(--white);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:all .2s}
+.scan-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:#ccc}
+.scan-card img{width:100%;height:180px;object-fit:cover;display:block}
+.scan-body{padding:18px}
+.s-name{font-size:15px;font-weight:700;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.s-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.sev-badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px}
+.sev-badge.severe{background:#fef2f2;color:var(--danger)}
+.sev-badge.non-severe{background:var(--accent-light);color:var(--accent)}
+.s-date{font-size:12px;color:var(--muted)}
+.s-conf{font-size:12px;color:var(--muted)}
+.card-actions{display:flex;gap:8px}
+.btn-view{flex:1;text-align:center;background:var(--accent-light);color:var(--accent);border:1px solid #b8dfc8;text-decoration:none;padding:9px;border-radius:10px;font-size:13px;font-weight:700;transition:all .2s}
+.btn-view:hover{background:var(--accent);color:#fff}
+.btn-del{background:#fef2f2;color:var(--danger);border:1px solid #fecaca;padding:9px 13px;border-radius:10px;font-size:14px;cursor:pointer;transition:all .2s}
+.btn-del:hover{background:var(--danger);color:#fff}
+
+.empty{text-align:center;padding:80px 20px;color:var(--muted)}
+.empty-icon{font-size:52px;margin-bottom:16px}
+.empty h3{font-family:'Lora',serif;font-size:1.5rem;color:var(--ink);margin-bottom:8px}
+.empty a{display:inline-block;margin-top:20px;background:var(--ink);color:#fff;text-decoration:none;padding:12px 24px;border-radius:12px;font-weight:700}
+
+footer{border-top:1px solid var(--border);padding:22px 40px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted)}
+.footer-logo{font-family:'Lora',serif;font-weight:600;color:var(--ink)}.footer-logo span{color:var(--accent)}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Derm<span>AI</span></div>
+  <div class="nav-links">
+    <a href="/" class="nav-pill">Analyze</a>
+    <a href="/history" class="nav-pill active">History</a>
+    <span class="nav-pill" style="color:var(--ink);border-color:var(--border);background:var(--white)">👤 {{ user_name }}</span>
+    <a href="/logout" class="nav-pill danger">Logout</a>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="page-top">
+    <div><h1>Scan History</h1><p>All your past skin disease detections.</p></div>
+    <a href="/" class="btn-new">+ New Scan</a>
+  </div>
+
+  {% if scans %}
+  <div class="stats">
+    <div class="stat-card"><div class="num">{{ scans|length }}</div><div class="lbl">Total Scans</div></div>
+    <div class="stat-card red"><div class="num">{{ severe }}</div><div class="lbl">Severe Cases</div></div>
+    <div class="stat-card green"><div class="num">{{ non_severe }}</div><div class="lbl">Non-Severe Cases</div></div>
+    <div class="stat-card"><div class="num">{{ scans[0].created[:10] if scans else '—' }}</div><div class="lbl">Last Scan</div></div>
+  </div>
+
+  <div class="grid">
+    {% for s in scans %}
+    <div class="scan-card" id="card-{{ s.scan_id }}">
+      <img src="/static/uploads/{{ s.filename }}" alt="Scan">
+      <div class="scan-body">
+        <div class="s-name">{{ s.disease_name }}</div>
+        <div class="s-meta">
+          <span class="sev-badge {{ s.severity|lower|replace(' ','-') }}">{{ s.severity }}</span>
+          <span class="s-date">{{ s.created[:10] }}</span>
+        </div>
+        <div class="s-conf" style="margin-bottom:12px">Confidence: <strong style="color:var(--accent)">{{ s.confidence }}%</strong></div>
+        <div class="card-actions">
+          <a href="/scan/{{ s.scan_id }}" class="btn-view">View Report</a>
+          <button class="btn-del" onclick="del('{{ s.scan_id }}')">🗑</button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% else %}
+  <div class="empty">
+    <div class="empty-icon">🔬</div>
+    <h3>No scans yet</h3>
+    <p>Start by analyzing your first skin image.</p>
+    <a href="/">Start Analyzing</a>
+  </div>
+  {% endif %}
+</div>
+
+<footer>
+  <div class="footer-logo">Derm<span>AI</span></div>
+  <div>© 2025 DermAI</div>
+</footer>
+
+<script>
+async function del(id){
+  if(!confirm('Delete this scan?')) return;
+  const r=await fetch('/api/delete/'+id,{method:'DELETE'});
+  if(r.ok){
+    const c=document.getElementById('card-'+id);
+    c.style.transition='opacity .3s,transform .3s';
+    c.style.opacity='0';c.style.transform='scale(.95)';
+    setTimeout(()=>c.remove(),300);
+  }
+}
+</script>
+</body>
+</html>

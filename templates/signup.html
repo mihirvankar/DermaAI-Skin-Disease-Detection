@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DermAI – Sign Up</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --bg: #f7f5f2; --white: #ffffff; --ink: #0f0e0c; --ink2: #2e2c28; --muted: #7a7670; --border: #e3e0da; --accent: #1a6b4a; --accent-light: #e8f4ee; --danger: #c0392b; }
+body { background: var(--bg); font-family: 'Bricolage Grotesque', sans-serif; min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+@media (max-width: 768px) { body { grid-template-columns: 1fr; } .left-panel { display: none; } }
+
+.left-panel {
+  background: var(--ink); padding: 60px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative; overflow: hidden;
+}
+.left-panel::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 20% 80%, rgba(26,107,74,0.4) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 50% at 80% 20%, rgba(26,107,74,0.2) 0%, transparent 60%);
+}
+.left-panel * { position: relative; z-index: 1; }
+.panel-logo { font-family: 'Lora', serif; font-size: 26px; font-weight: 600; color: white; }
+.panel-logo span { color: #4ade80; }
+.panel-content h2 { font-family: 'Lora', serif; font-size: 2.4rem; color: white; line-height: 1.2; margin-bottom: 16px; }
+.panel-content h2 em { color: #4ade80; font-style: italic; }
+.panel-content p { color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.7; }
+.panel-features { display: flex; flex-direction: column; gap: 14px; }
+.feature { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.8); font-size: 14px; }
+.feature-icon { width: 36px; height: 36px; background: rgba(74,222,128,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+
+.right-panel { display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+.form-box { width: 100%; max-width: 400px; }
+.form-box .top-logo { display: none; font-family: 'Lora', serif; font-size: 24px; font-weight: 600; color: var(--ink); text-align: center; margin-bottom: 32px; }
+.form-box .top-logo span { color: var(--accent); }
+@media (max-width: 768px) { .form-box .top-logo { display: block; } }
+
+.form-box h1 { font-family: 'Lora', serif; font-size: 1.9rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.form-box .sub { color: var(--muted); font-size: 15px; margin-bottom: 32px; }
+
+.error-box { background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; color: var(--danger); padding: 12px 16px; font-size: 14px; margin-bottom: 20px; }
+
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: 13px; font-weight: 700; color: var(--ink2); margin-bottom: 7px; }
+.field input { width: 100%; padding: 13px 16px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; font-size: 15px; font-family: inherit; color: var(--ink); outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+.field input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,74,0.1); }
+.field .hint { font-size: 12px; color: var(--muted); margin-top: 5px; }
+
+.btn-submit { width: 100%; padding: 15px; background: var(--ink); color: white; font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; margin-top: 8px; transition: all 0.2s; }
+.btn-submit:hover { background: var(--ink2); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+
+.switch { text-align: center; margin-top: 24px; font-size: 14px; color: var(--muted); }
+.switch a { color: var(--accent); font-weight: 700; text-decoration: none; }
+.switch a:hover { text-decoration: underline; }
+
+.terms { text-align: center; margin-top: 16px; font-size: 12px; color: var(--muted); line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<div class="left-panel">
+  <div class="panel-logo">Derm<span>AI</span></div>
+  <div class="panel-content">
+    <h2>Start Your<br><em>Free</em><br>Account</h2>
+    <p>Join DermAI and get instant access to AI-powered skin disease detection and analysis tools.</p>
+  </div>
+  <div class="panel-features">
+    <div class="feature"><div class="feature-icon">🔬</div> Instant skin condition detection</div>
+    <div class="feature"><div class="feature-icon">📋</div> Save all scan reports</div>
+    <div class="feature"><div class="feature-icon">🔒</div> Your scans are private to you</div>
+  </div>
+</div>
+
+<div class="right-panel">
+  <div class="form-box">
+    <div class="top-logo">Derm<span>AI</span></div>
+
+    <h1>Create account</h1>
+    <p class="sub">Sign up to start analyzing skin conditions with AI.</p>
+
+    {% if error %}
+    <div class="error-box">⚠️ {{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="/signup">
+      <div class="field">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Your full name" value="{{ name or '' }}" required>
+      </div>
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="you@example.com" value="{{ email or '' }}" required>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Min. 6 characters" required>
+        <div class="hint">Must be at least 6 characters long.</div>
+      </div>
+      <button type="submit" class="btn-submit">Create Account →</button>
+    </form>
+
+    <div class="switch">
+      Already have an account? <a href="/login">Log in</a>
+    </div>
+    <div class="terms">By signing up, you agree this is a student project<br>for educational purposes only.</div>
+  </div>
+</div>
+
+</body>
+</html>
