@@ -1,5 +1,22 @@
 # AI-Based Skin Disease Detection and Awareness System
 ### Final Year Project | CNN + MobileNetV2 + Flask + SQLite
+# DermaAI - Skin Disease Detection System
+
+AI based healthcare application for detecting skin diseases using deep learning.
+
+Tech Stack:
+- ReactJS
+- Flask
+- TensorFlow
+- SQLite
+- Python
+
+Features:
+- User Authentication
+- Image Upload
+- AI Disease Prediction
+- Scan History
+- Result Management
 
 ---
 
